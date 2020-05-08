@@ -204,10 +204,22 @@
         ],
         // 加载数据方法 必须为 Promise 对象
         loadData: parameter => {
-          return getRoleList(parameter)
-            .then(res => {
-              return res.result
-            })
+          // return getRoleList(parameter)
+          //   .then(res => {
+          //     return res.result
+          //   })
+
+          return new Promise((resolve, reject) => {
+            let data = {
+              data: [{
+                id: 1,
+                name: 'xxx',
+                status: '222',
+                createTime: '2018'
+              }]
+            };
+            resolve(data);
+          });
         },
 
         selectedRowKeys: [],
